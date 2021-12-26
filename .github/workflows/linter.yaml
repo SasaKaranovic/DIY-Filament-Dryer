@@ -1,0 +1,36 @@
+# This is the name of the workflow, visible on GitHub UI.
+name: Lint Code Base
+
+# Here we tell GitHub to run the workflow when a commit
+# is pushed or a Pull Request is opened.
+on:
+  pull_request:
+    branches: [master, main]
+
+#  push:
+#    branches: [master, main]
+    # paths:
+    #   - "**.ino"
+    #   - "**.h"
+    #   - "**.c"
+    #   - "**.cpp"
+    #   - "**.hpp"
+    #   - "**.platformio.ini"
+
+# This is the list of jobs that will be run concurrently.
+# Since we use a build matrix, the actual number of jobs
+# started depends on how many configurations the matrix
+# will produce.
+jobs:
+  Lint-code:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: DoozyX/clang-format-lint-action@v0.13
+        with:
+          source: './Firmware'
+          # exclude: './third_party ./external'
+          extensions: 'c,h,ino'
+          clangFormatVersion: 13
+          # style: 'file'

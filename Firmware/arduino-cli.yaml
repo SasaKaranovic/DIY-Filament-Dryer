@@ -1,0 +1,23 @@
+board_manager:
+  additional_urls: ["https://dl.espressif.com/dl/package_esp32_index.json"]
+daemon:
+  port: "50051"
+directories:
+  data: C:\Users\Sasa\AppData\Local\Arduino15
+  downloads: C:\Users\Sasa\AppData\Local\Arduino15\staging
+  user: C:\Users\Sasa\Documents\Arduino
+library:
+  enable_unsafe_install: true
+logging:
+  file: ""
+  format: text
+  level: info
+metrics:
+  addr: :9090
+  enabled: true
+output:
+  no_color: false
+sketch:
+  always_export_binaries: false
+updater:
+  enable_notification: true
