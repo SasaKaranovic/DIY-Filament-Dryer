@@ -2,7 +2,7 @@
 
 
 ## What is this project about?
-[![DIY WiFi Enabled Filament Dry Box](http://img.youtube.com/vi/OI9FtfCVnL0/0.jpg)](http://www.youtube.com/watch?v=OI9FtfCVnL0 "DIY WiFi Enabled Filament Dry Box")
+[![DIY WiFi Enabled Filament Dry Box](http://img.youtube.com/vi/txF2oQPIjb4/0.jpg)](http://www.youtube.com/watch?v=txF2oQPIjb4 "DIY WiFi Enabled Filament Dry Box")
 
 Above video shows the finished DryBox, how it works and motivation behind some of the design decisions.
 
@@ -14,7 +14,7 @@ Hardware and firmware build instructions and source files are available in their
 
 Blog page: https://sasakaranovic.com/projects/diy-filament-dry-box
 
-YouTube video: http://www.youtube.com/watch?v=OI9FtfCVnL0
+YouTube video: http://www.youtube.com/watch?v=txF2oQPIjb4
 
 
 ---
