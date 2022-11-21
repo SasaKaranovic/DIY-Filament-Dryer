@@ -1,4 +1,5 @@
-#include "Adafruit_SHT31.h"
+#include "Adafruit_Sensor.h"
+#include "Adafruit_BME280.h"
 #include "Adafruit_Si7021.h"
 #include "ESPAsyncWebServer.h"
 #include "SPIFFS.h"
@@ -18,7 +19,7 @@ DeviceAddress heaterSensor;
 AsyncWebServer server(80);
 int WiFi_status = WL_IDLE_STATUS;
 
-Adafruit_SHT31 temp_sensor_in = Adafruit_SHT31();
+Adafruit_BME280 temp_sensor_in;
 Adafruit_Si7021 temp_sensor_out = Adafruit_Si7021();
 
 float temperature_samples_in[PID_SAMPLES] = {0};
@@ -58,10 +59,10 @@ void setup()
     ledcAttachPin(PIN_HEATER_CTL, PWM_CH_HEATER);
     ledcWrite(PWM_CH_HEATER, HEATER_PWM_OFF);
 
-    // FAN PW -- Make sure FAN PWM is set to maximum (fan OFF)
+    // FAN PW -- Make sure FAN PWM is set to 0 (fan OFF)
     ledcSetup(PWM_CH_FAN, PWM_FREQ_FAN, PWM_RESOLUTION);
     ledcAttachPin(PIN_FAN_PWM, PWM_CH_FAN);
-    ledcWrite(PWM_CH_FAN, PWM_MAX_VALUE);
+    ledcWrite(PWM_CH_FAN, 0);
 
     // Setup temperature and humidity oneWireSensors
     if (!temp_sensor_out.begin())
@@ -78,7 +79,7 @@ void setup()
     }
 
     Wire.setClock(10000);
-    if (!temp_sensor_in.begin(0x44))
+    if (!temp_sensor_in.begin())
     {
         Serial.println("Can't find SHT31! (in sensor)");
         LED_ALL_OFF();
@@ -144,7 +145,6 @@ void setup()
             delay(500);
         }
     }
-
     Serial.print("WiFi IP: ");
     Serial.println(WiFi.localIP());
 
@@ -161,7 +161,7 @@ void setup()
 }
 
 //
-// 	** Main loop **
+//   ** Main loop **
 //
 void loop()
 {
@@ -223,6 +223,7 @@ void sample_sens_in_and_out(void)
     while (i--)
     {
         tmp_temp = temp_sensor_out.readTemperature();
+
         // delay(5);
         tmp_humid = temp_sensor_out.readHumidity();
         if (!isnan(tmp_temp) && !isnan(tmp_humid))
@@ -238,8 +239,7 @@ void sample_sens_in_and_out(void)
         temperature_out = tmp_temp;
         humidity_out = tmp_humid;
 #if DEF_DEBUG_SENSOR_SAMPLES
-        Serial.println((String) "TempOut:" + temperature_out +
-                       " - HumidOut:" + humidity_out);
+        Serial.println((String) "TempOut:" + temperature_out + " - HumidOut:" + humidity_out);
 #endif
     }
     // Otherwise we have a problem
@@ -267,8 +267,7 @@ void sample_sens_in_and_out(void)
         temperature_in = tmp_temp;
         humidity_in = tmp_humid;
 #if DEF_DEBUG_SENSOR_SAMPLES
-        Serial.println((String) "TempIn:" + temperature_in +
-                       " - HumidIn:" + humidity_in);
+        Serial.println((String) "TempIn:" + temperature_in + " - HumidIn:" + humidity_in);
 #endif
     }
     // Otherwise we have a problem
@@ -317,7 +316,8 @@ void set_fan_duty(uint8_t duty)
     }
 
     fan_duty = duty;
-    uint32_t pwm_raw_fan = ((PWM_MAX_VALUE * (100 - duty)) / 100.0);
+    // changed code here
+    uint32_t pwm_raw_fan = ((PWM_MAX_VALUE * (duty)) / 100.0);
 #if DEF_DEBUG_PWM_VALUES
     Serial.println((String) "Setting fan to " + pwm_raw_fan);
 #endif
@@ -390,10 +390,16 @@ void heater_recalc_pwm(void)
     // As a simple solution, we will use the following flow
     // 1. Check if heater temperature is higher or equal to the maximum set
     // heater temperature
-    // 		- if True, use heater max temperature as the target for our PID
+    //    - if True, use heater max temperature as the target for our PID
     // controller
-    // 		- if False, use enclosure maximum temperature as the target for
+    //    - if False, use enclosure maximum temperature as the target for
     // our PID controller
+
+    // changed code here
+    if ((temperature_in >= target_temperature_in) || (temperature_heater >= max_temperature_heater)){
+        set_heater_pwm(0);
+        return;
+    }
 
     float average = 0;
     float pid_del_p;
@@ -413,8 +419,7 @@ void heater_recalc_pwm(void)
     {
         Serial.println("Invalid temperature values");
         Serial.println((String) "temp_heater:" + temperature_heater);
-        Serial.println((String) "target_temperature_in:" +
-                       target_temperature_in);
+        Serial.println((String) "target_temperature_in:" + target_temperature_in);
         set_heater_duty(HEATER_DUTY_OFF);
         return;
     }
@@ -504,21 +509,19 @@ void heater_recalc_pwm(void)
 
 void setupWebServer(void)
 {
-    server.onNotFound([](AsyncWebServerRequest *request) {
+    server.onNotFound([](AsyncWebServerRequest *request)
+                      {
         Serial.println("404:");
         Serial.println(request->url());
-        request->send(404);
-    });
+        request->send(404); });
 
     // // send a file when /index is requested
-    server.on("/index.html", HTTP_ANY, [](AsyncWebServerRequest *request) {
-        request->send(SPIFFS, "/index.html");
-    });
+    server.on("/index.html", HTTP_ANY, [](AsyncWebServerRequest *request)
+              { request->send(SPIFFS, "/index.html"); });
 
     // send a file when /index is requested
-    server.on("/", HTTP_ANY, [](AsyncWebServerRequest *request) {
-        request->send(SPIFFS, "/index.html");
-    });
+    server.on("/", HTTP_ANY, [](AsyncWebServerRequest *request)
+              { request->send(SPIFFS, "/index.html"); });
 
     server.serveStatic("/img/", SPIFFS, "/img/");
     server.serveStatic("/css/", SPIFFS, "/css/");
@@ -526,7 +529,8 @@ void setupWebServer(void)
     server.serveStatic("/webfonts/", SPIFFS, "/webfonts/");
 
     // Get dry box status
-    server.on("/status", HTTP_GET, [](AsyncWebServerRequest *request) {
+    server.on("/status", HTTP_GET, [](AsyncWebServerRequest *request)
+              {
         char buff[200] = {0};
         int len;
         len =
@@ -545,23 +549,22 @@ void setupWebServer(void)
         }
         else
         {
-            request->send(500, "text/plain",
-                          "{\"status\": \"Internal server error\"}");
-        }
-    });
+            request->send(500, "text/plain", "{\"status\": \"Internal server error\"}");
+        } });
 
     // Turn OFF dry box
-    server.on("/off", HTTP_GET, [](AsyncWebServerRequest *request) {
+    server.on("/off", HTTP_GET, [](AsyncWebServerRequest *request)
+              {
         box_status = 0;
         set_fan_duty(0);
         set_heater_duty(HEATER_DUTY_OFF);
         target_temperature_in = 0;
         max_temperature_heater = 0;
-        request->send(200, "text/plain", "{\"status\": \"OK\"}");
-    });
+        request->send(200, "text/plain", "{\"status\": \"OK\"}"); });
 
     // Turn ON dry box and set target temperature, max heater temperature and fan speed
-    server.on("/set", HTTP_GET, [](AsyncWebServerRequest *request) {
+    server.on("/set", HTTP_GET, [](AsyncWebServerRequest *request)
+              {
         // Check if temperature, heater temperature and fan speed arguments are present
         if (request->hasParam("temperature") && request->hasParam("heater") &&
             request->hasParam("fanspeed"))
@@ -583,8 +586,7 @@ void setupWebServer(void)
             fanspeed = str_fanspeed.toInt();
 
 #if DEF_DEUG_WEB_API
-            Serial.println((String) "Target temp: " + temperature +
-                           "C Heater: " + heater + "C Fan Speed: " + fanspeed);
+            Serial.println((String) "Target temp: " + temperature + "C Heater: " + heater + "C Fan Speed: " + fanspeed);
 #endif
 
             // Check drybox temperature and heater temperature limit
@@ -610,8 +612,7 @@ void setupWebServer(void)
         {
             request->send(400, "text/plain", "{\"status\": \"Bad request\"}");
             return;
-        }
-    });
+        } });
 }
 
 void check_wifi_connection(void)

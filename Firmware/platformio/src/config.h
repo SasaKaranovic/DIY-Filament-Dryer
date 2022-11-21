@@ -9,8 +9,8 @@
 #define PIN_LED_RED                 27
 #define PIN_LED_GREEN               14
 #define PIN_LED_BLUE                12
-#define LED_ON(x)                   do{digitalWrite(x, LOW);}while(0)
-#define LED_OFF(x)                  do{digitalWrite(x, HIGH);}while(0)
+#define LED_ON(x)                   do{digitalWrite(x, HIGH);}while(0)
+#define LED_OFF(x)                  do{digitalWrite(x, LOW);}while(0)
 
 #define LED_ALL_OFF()               do{digitalWrite(PIN_LED_RED, HIGH);\
                                         digitalWrite(PIN_LED_GREEN, HIGH);\
@@ -28,7 +28,7 @@
 
 #define PWM_HEATER_INVERT_VALUES    1
 #define PWM_FREQ_HEATER             500
-#define PWM_FREQ_FAN                25000
+#define PWM_FREQ_FAN                20000
 #define PWM_RESOLUTION              10
 #define PWM_MAX_VALUE               1024L
 #define HEATER_DUTY_OFF             0
@@ -47,11 +47,11 @@
 #define WIFI_CHECK_CONNECTION_MS    10000
 
 #define DEF_USE_WEB                 1
-#define DEF_DEBUG_CALIBRATE_ADC     0
-#define DEF_DEBUG_PID               0
-#define DEF_DEBUG_HETER_SAMPLES     0
-#define DEF_DEBUG_SENSOR_SAMPLES    0
-#define DEF_DEBUG_PWM_VALUES        0
+#define DEF_DEBUG_CALIBRATE_ADC     1
+#define DEF_DEBUG_PID               1
+#define DEF_DEBUG_HETER_SAMPLES     1
+#define DEF_DEBUG_SENSOR_SAMPLES    1
+#define DEF_DEBUG_PWM_VALUES        1
 #define DEF_DEUG_SPIFFS             0
 
 // clang-format on
