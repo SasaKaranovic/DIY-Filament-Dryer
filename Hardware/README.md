@@ -31,5 +31,8 @@ PCB Specs:
 - Via Process: Tenting vias
 - Finished Copper: 1 oz Cu
 
+Additional Parts Required:
+- 2x - SHT3X Sensors
+- 24AWG-4C Wire
 
 [<- Go back to repository root](../README.md)
