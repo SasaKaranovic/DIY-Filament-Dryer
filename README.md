@@ -18,7 +18,7 @@ YouTube video: http://www.youtube.com/watch?v=txF2oQPIjb4
 
 
 ---
-
+#### This is an original project by Sasa Karanovic, please show him the love he deserves.
 #### Sasa Karanovic
 
 <a href="https://sasakaranovic.com/" target="_blank" title="Sasa Karanovic Home Page"><img src="https://raw.githubusercontent.com/SasaKaranovic/common/master/assets/img_home.png" width="16"> Home Page</a> &nbsp;&middot;&nbsp;
