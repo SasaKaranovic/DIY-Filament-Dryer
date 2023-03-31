@@ -1,0 +1,71 @@
+Altium Designer Pick and Place Locations
+C:\Users\Alucard\Documents\GitHub\DIY-WiFi-Filament-Dryer\Hardware\Altium_Project\Project Outputs for DryBox\Pick Place\Pick Place for DryBox.txt
+
+========================================================================================================================
+File Design Information:
+
+Date:       30/03/23
+Time:       20:19
+Revision:   baa42a4ccb9e06c06aadfa4114d73671c9a7bbc5
+Variant:    No variations
+Units used: mil
+
+Designator Comment                            Layer       Footprint                    Center-X(mil) Center-Y(mil) Rotation Description                                                                                             
+P0         "Header 4"                         TopLayer    Header_4x1                   715.000       -355.001      0        "Header, 4-Pin"                                                                                         
+C6         Cap                                TopLayer    0603_-_CAP_HS                625.000       14.999        270      Capacitor                                                                                               
+R10        Res                                TopLayer    0603_-_HS                    -825.000      334.999       90       Resistor                                                                                                
+R3         Res                                TopLayer    0603_-_HS                    -765.000      334.999       90       Resistor                                                                                                
+R2         Res                                TopLayer    0603_-_HS                    -705.000      334.999       90       Resistor                                                                                                
+D1         "RGB LED"                          TopLayer    RGB_LED_-_0606_(1616_Metric) -750.000      480.000       180      "Red, Green, Blue (RGB) - LED Indication - Discrete 1.9V Red, 2.8V Green, 2.8V Blue 0606 (1616 Metric)" 
+U3         MIC5365-1.8YD5-TR                  TopLayer    SOT-23-5_-_duplicate         298.740       -87.402       0        "High-Performance Single 1.8V@150mA LDO"                                                                
+C5         Cap                                TopLayer    0603_-_CAP                   295.000       29.999        0        Capacitor                                                                                               
+C4         Cap                                TopLayer    0603_-_CAP                   295.000       89.999        0        Capacitor                                                                                               
+C3         25V                                TopLayer    Electrolytic_Cap_2.54mm      825.000       -725.001      180      "Polarized Capacitor (Axial)"                                                                           
+R9         Res                                TopLayer    0603_-_HS                    565.000       149.999       90       Resistor                                                                                                
+P4         "Header 4"                         TopLayer    Header_4x1                   825.000       559.999       270      "Header, 4-Pin"                                                                                         
+C22        Cap                                TopLayer    0603_-_CAP_HS                470.000       679.999       270      Capacitor                                                                                               
+C21        Cap                                TopLayer    0603_-_CAP_HS                640.000       -730.001      0        Capacitor                                                                                               
+C20        Cap                                TopLayer    0603_-_CAP_HS                640.000       -790.001      0        Capacitor                                                                                               
+R23        Res                                TopLayer    0603_-_HS                    5.000         -632.873      180      Resistor                                                                                                
+R19        Res                                TopLayer    0603_-_HS                    5.000         -510.001      0        Resistor                                                                                                
+R17        Res                                TopLayer    0603_-_HS                    5.000         -570.001      180      Resistor                                                                                                
+R13        Res                                TopLayer    0603_-_HS                    330.000       -495.001      180      Resistor                                                                                                
+R5         Res                                TopLayer    0603_-_HS                    330.000       -555.001      180      Resistor                                                                                                
+R12        Res                                TopLayer    0603_-_HS                    330.000       -800.001      0        Resistor                                                                                                
+R8         Res                                TopLayer    0603_-_HS                    565.000       14.999        90       Resistor                                                                                                
+Q1         DMN62D0U-13                        TopLayer    SOT90P240X100-3N             340.630       -675.434      180      "MOSFET N-CH 60V 0.38A"                                                                                 
+D2         "Diode Schotky"                    TopLayer    SOD123F                      525.000       -730.000      270      ""                                                                                                      
+C15        Cap                                TopLayer    0603_-_CAP_HS                -755.000      714.999       180      Capacitor                                                                                               
+C14        Cap                                TopLayer    0603_-_CAP_HS                -755.000      774.999       180      Capacitor                                                                                               
+U2         LM2576-xx                          TopLayer    TO263-5                      -535.039      -200.493      90       "Switching mode regulator [ 3v3, 5v, 12v and ADJ ]"                                                     
+R20        Res                                TopLayer    0603_-_HS                    -30.000       -50.001       0        Resistor                                                                                                
+R4         Res                                TopLayer    0603_-_HS                    -165.000      -50.001       0        Resistor                                                                                                
+L1         Inductor                           TopLayer    IND_TH_SMD                   -90.000       -240.001      90       Inductor                                                                                                
+D4         "Diode Schotky"                    TopLayer    SOD123F                      100.000       -265.000      270      ""                                                                                                      
+C13        Cap                                TopLayer    0603_-_CAP                   295.000       -210.001      0        Capacitor                                                                                               
+C12        Cap                                TopLayer    0603_-_CAP                   295.000       -270.001      0        Capacitor                                                                                               
+C11        Cap                                TopLayer    0603_-_CAP                   85.000        -80.000       90       Capacitor                                                                                               
+C10        25V                                TopLayer    Electrolytic_Cap_2.54mm      -420.000      -700.001      180      "Polarized Capacitor (Axial)"                                                                           
+C9         Cap                                TopLayer    0603_-_CAP                   145.000       -81.103       90       Capacitor                                                                                               
+C8         Cap                                TopLayer    0603_-_CAP                   -665.000      -525.001      0        Capacitor                                                                                               
+C7         Cap                                TopLayer    0603_-_CAP                   -665.000      -465.001      0        Capacitor                                                                                               
+SW1        "SWITCH TACTILE SPST-NO 0.05A 12V" TopLayer    5MM_5MM_SWITCH_SMT           760.001       -155.000      0        "SWITCH TACTILE SPST-NO 0.05A 12V"                                                                      
+R7         Res                                TopLayer    0603_-_HS                    295.000       174.999       0        Resistor                                                                                                
+R6         Res                                TopLayer    0603_-_HS                    -755.000      624.999       180      Resistor                                                                                                
+C2         Cap                                TopLayer    0603_-_CAP_HS                -755.000      564.999       180      Capacitor                                                                                               
+U1         "ESP32 Module"                     TopLayer    ESP32-WROOM-32               -225.866      470.472       0        ""                                                                                                      
+Q3         DMN62D0U-13                        TopLayer    SOT90P240X100-3N             20.000        -740.000      180      "MOSFET N-CH 60V 0.38A"                                                                                 
+P2         "Header 3X2"                       BottomLayer HDR2X3                       370.000       934.999       180      "Header, 3-Pin, Dual row"                                                                               
+P3         "Header 2"                         TopLayer    Header_2x1                   -565.000      -945.001      0        "Header, 2-Pin"                                                                                         
+P11        "Header 4"                         TopLayer    Header_4x1                   465.000       -945.001      180      "Header, 4-Pin"                                                                                         
+F1         "Fuse Thermal"                     TopLayer    1812F                        -615.000      -705.000      270      "Thermal Fuse"                                                                                          
+R18        Res                                TopLayer    0603_-_HS                    20.000        -855.001      180      Resistor                                                                                                
+R22        Res                                TopLayer    0603_-_HS                    20.000        -915.001      180      Resistor                                                                                                
+R11        Res                                TopLayer    0603_-_HS                    590.000       679.999       90       Resistor                                                                                                
+R1         Res                                TopLayer    0603_-_HS                    410.000       679.999       90       Resistor                                                                                                
+Q2         PSMN9R1-30YL                       TopLayer    LFPAK-8                      -163.000      -597.501      270      "MOSFET N-CH 30V 37A LFPAK"                                                                             
+P8         "Header 2"                         TopLayer    Header_2x1                   -305.000      -945.001      0        "Header, 2-Pin"                                                                                         
+P5         "Header 3"                         TopLayer    Header_3x1                   825.000       179.999       90       "Header, 3-Pin"                                                                                         
+P1         "Header 4"                         TopLayer    Header_4x1                   700.000       559.999       270      "Header, 4-Pin"                                                                                         
+D3         "Diode Schotky"                    TopLayer    SOD123F                      -305.000      -845.001      180      ""                                                                                                      
+C1         Cap                                TopLayer    0603_-_CAP_HS                530.000       679.999       270      Capacitor                                                                                               
