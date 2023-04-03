@@ -4,11 +4,15 @@
 ## What is this project about?
 [![DIY WiFi Enabled Filament Dry Box](http://img.youtube.com/vi/txF2oQPIjb4/0.jpg)](http://www.youtube.com/watch?v=txF2oQPIjb4 "DIY WiFi Enabled Filament Dry Box")
 
-Above video shows the finished DryBox, how it works and motivation behind some of the design decisions.
+"Above video shows the finished DryBox, how it works and motivation behind some of the design decisions." - Sasa Karanovic
 
 ## How can I build my own?
-The above video explains the idea and how hardware and firmware works. It's recommended that you watch that first.
-Hardware and firmware build instructions and source files are available in their respective folders.
+"The above video explains the idea and how hardware and firmware works. It's recommended that you watch that first.
+Hardware and firmware build instructions and source files are available in their respective folders." -Sasa Karanovic
+
+This project creates an in place replacement for controlling the Sunlu Filament Dryer Box.
+
+As time progresses, I hope to add onto Sasa Karanovic's work to allow for DIY filemnt stroage enclosures.
 
 ---
 
