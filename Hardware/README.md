@@ -8,9 +8,18 @@ Bill of Material is available in `Bill of Materials.pdf`.
 Most parts are interchangable, so feel free to source these parts from your favorite part distributor.
 When replacing capacitors, make sure you choose the same voltage rating!
 
-### Additional Parts Required:
+### Additional Parts Required for Sunlu Only Build:
 - 2x - SHT3X Sensors
 - 24AWG-4C Wire
+- 4 Pin 5v 40x10 Fan
+
+### Additional Parts Required for DIY Only Build:
+- 2x - SHT3X Sensors
+- 24AWG-4C Wire
+- 12v Heating Pad w/ adhesive
+- Heatsink (to mount pad onto)
+- 4 Pin 5V 80x20 Fan or Larger
+
 
 ### How can I order the PCB
 
