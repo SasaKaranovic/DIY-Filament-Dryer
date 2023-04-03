@@ -18,6 +18,7 @@ When replacing capacitors, make sure you choose the same voltage rating!
 - 24AWG-4C Wire
 - 12v Heating Pad w/ adhesive
 - Heatsink (to mount pad onto)
+- DS18B20 Sensor (To mount to heatsink)
 - 4 Pin 5V 80x20 Fan or Larger
 
 
