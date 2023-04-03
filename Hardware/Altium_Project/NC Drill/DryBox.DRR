@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------------------------------------------------------------------
-NCDrill File Report For: DryBox.PcbDoc   3/30/2023  8:19:45 PM
+NCDrill File Report For: DryBox.PcbDoc   4/3/2023  6:37:17 PM
 ----------------------------------------------------------------------------------------------------------------------------------
 
 Layer Pair : Top Layer to Bottom Layer
@@ -7,12 +7,12 @@ ASCII RoundHoles File : DryBox.TXT
 
 Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
 ----------------------------------------------------------------------------------------------------------------------------------
-T1      0.4mm (16mil)                                             Round             5         PTH        38.36mm (1.51inch)
-T2      0.762mm (30mil)                                           Round             2         PTH        5.08mm (0.20inch)
-T3      0.8mm (31mil)                                             Round             4         PTH        36.71mm (1.45inch)
-T4      0.9mm (35mil)                                             Round             29        PTH        150.27mm (5.92inch)
-T5      3mm (118mil)                                              Round             4         NPTH       136.00mm (5.35inch)
+T1      16mil (0.4mm)                                             Round             16        PTH        5.59inch (142.00mm)
+T2      30mil (0.762mm)                                           Round             2         PTH        0.20inch (5.08mm)
+T3      32mil (0.8mm)                                             Round             4         PTH        1.45inch (36.71mm)
+T4      35mil (0.9mm)                                             Round             29        PTH        5.99inch (152.17mm)
+T5      118mil (3mm)                                              Round             4         NPTH       5.35inch (136.00mm)
 ----------------------------------------------------------------------------------------------------------------------------------
-Totals                                                                              44
+Totals                                                                              55
 
 Total Processing Time (hh:mm:ss) : 00:00:00
