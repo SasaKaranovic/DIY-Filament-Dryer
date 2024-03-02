@@ -114,12 +114,11 @@ void setup()
     // Connect to WiFi
     Serial.print("Connecting to SSID: ");
     Serial.println(ssid);
-    while (WiFi_status != WL_CONNECTED)
+    WiFi.begin(ssid, password);
+    while (WiFi.status() != WL_CONNECTED)
     {
-        Serial.print(".");
-        WiFi_status = WiFi.begin(ssid, password);
-        // wait 5 seconds and check again
-        delay(5000);
+        delay(3000);
+        Serial.print(WiFi.status());
     }
     Serial.println("");
 
