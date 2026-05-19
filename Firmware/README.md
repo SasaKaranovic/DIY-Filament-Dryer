@@ -1,7 +1,7 @@
 # How to build firmware
 
 For our firmware development, we are going to use Arduino. Mainly because it's user friendly, easy to use and
-most hobbyists are familiar with it or have already used it. While we could build te same or even more efficient
+most hobbyists are familiar with it or have already used it. While we could build the same or even more efficient
 firmware using C and ESP-IDF, we are going to stick with Arduino and hope that this allows the project to be
 more friendly and easier to use/modify by wider DIY/hacker community.
 
@@ -25,7 +25,7 @@ Arduino IDE and manually searching and downloading all the board/library files.
 ### 1. Install PlatformIO
 Installing PlatformIO CLI is pretty straight-forward and also well documented for Windows, Linux and MacOS.
 You will need to follow few steps and get PlatformIO CLI installed, detailed tutorial can be found at https://platformio.org/install/cli
-Make sure to install [PlatformIO Core](https://docs.platformio.org/en/latest//core/installation.html#installation-methods 'https://docs.platformio.org/en/latest//core/installation.html#installation-methods') and allso that it is available trough [shell](https://docs.platformio.org/en/latest//core/installation.html#piocore-install-shell-commands 'PlatformIO Core - Install Shell Commands¶').
+Make sure to install [PlatformIO Core](https://docs.platformio.org/en/latest//core/installation.html#installation-methods 'https://docs.platformio.org/en/latest//core/installation.html#installation-methods') and also that it is available trough [shell](https://docs.platformio.org/en/latest//core/installation.html#piocore-install-shell-commands 'PlatformIO Core - Install Shell Commands¶').
 
 ### 2. Build firmware
 Open shell/command-prompt and navigate to 'Firmware/platformio' folder.

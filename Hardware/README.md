@@ -11,7 +11,7 @@ When replacing capacitors, make sure you choose the same voltage rating!
 
 ### How can I order the PCB
 
-I have prepared Gerber files that are verified and ready to go. You can take `Release\2023-04-29_14-32_DryBox_R1\2023-04-29_14-32_DryBox_R1_Gerber.zip` and upload it to your favorite PCB manufactuer like PCBWay, SeeedStudio, JLCPCB etc.
+I have prepared Gerber files that are verified and ready to go. You can take `Release\2023-04-29_14-32_DryBox_R1\2023-04-29_14-32_DryBox_R1_Gerber.zip` and upload it to your favorite PCB manufacturer like PCBWay, SeeedStudio, JLCPCB etc.
 There are no critical PCB specs, so you can select whichever one you prefer.
 For your reference, the specifications for the PCBs that I have ordered are listed below.
 
